@@ -170,11 +170,11 @@ button:hover {
 
 /* Mobile Controls */
 #mobileControls {
-  position: flex;
+  position: fixed;
   flex-direction: row;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-150%);
+  transform: translateX(-55%);
   display: flex;
   gap: 14px;
   z-index: 9999;
@@ -186,7 +186,7 @@ button:hover {
   background: #334155;
   color: white;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
-  margin-top: 10px;
+  margin-top: -140px;
 }
 #downBtn {
   padding-left: 15px;
@@ -201,7 +201,7 @@ button:hover {
     font-size: 20px;
   }
   #mobileControls button {
-    transform: translateX(-135%);
+    margin-top: -70px;
   }
   .controls-group {
     gap: 3px;

@@ -356,17 +356,35 @@ function quitGame() {
 
 // ----- Leaderboard (localStorage) -----
 function saveLeaderboard() {
-  const raw = JSON.parse(localStorage.getItem("tetris_scores") || "[]");
+  let raw = JSON.parse(localStorage.getItem("tetris_scores") || "[]");
+
+  // Tambahkan score baru
   raw.push(score);
+
+  // Urutkan desc
   raw.sort((a, b) => b - a);
-  const top = raw.slice(0, 5);
-  localStorage.setItem("tetris_scores", JSON.stringify(top));
+
+  // Simpan hanya 5 score terbaik
+  raw = raw.slice(0, 5);
+
+  localStorage.setItem("tetris_scores", JSON.stringify(raw));
 }
 
 function loadLeaderboard() {
-  const data = JSON.parse(localStorage.getItem("tetris_scores") || "[]");
-  leaderboardEl.innerHTML =
-    data.map((s, i) => `<li>#${i + 1}: ${s}</li>`).join("") || "<li>—</li>";
+  let data = JSON.parse(localStorage.getItem("tetris_scores") || "[]");
+
+  // Jika leaderboard masih kosong → isi default 5 nilai
+  if (data.length === 0) {
+    data = [0, 0, 0, 0, 0];
+    localStorage.setItem("tetris_scores", JSON.stringify(data));
+  }
+
+  // Pastikan hanya 5 data saja
+  data = data.slice(0, 5);
+
+  leaderboardEl.innerHTML = data
+    .map((s, i) => `<li>#${i + 1}: ${s}</li>`)
+    .join("");
 }
 
 // ----- Sound helper -----
