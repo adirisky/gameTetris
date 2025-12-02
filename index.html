@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Game Klasik</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <canvas id="board" width="240" height="480"></canvas>
+
+      <div class="side">
+        <h3 class="header-blue">Next Piece</h3>
+        <canvas id="nextCanvas" width="96" height="96"></canvas>
+
+        <h3 class="header-blue">Difficulty</h3>
+        <select id="difficulty">
+          <option value="800">Easy</option>
+          <option value="600" selected>Normal</option>
+          <option value="400">Hard</option>
+          <option value="250">Extreme</option>
+        </select>
+
+        <h2>Score: <span id="score">0</span></h2>
+
+        <h3 class="header-blue">Leaderboard</h3>
+        <ol id="leaderboard"></ol>
+
+        <div class="controls-group">
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn" class="muted-btn">Pause</button>
+        </div>
+        <div class="controls-group" style="margin-top: 8px">
+          <button id="toggleSound" class="muted-btn">Toggle Sound: ON</button>
+        </div>
+
+        <div id="mobileControls">
+          <button id="leftBtn">⬅</button>
+          <button id="rotateBtn">⟳</button>
+          <button id="rightBtn">➡</button>
+          <button id="downBtn">⬇</button>
+          <button id="dropBtn">⬇⬇</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOverScreen" class="game-over">
+      <h1>GAME OVER</h1>
+      <div id="finalScore">Score: 0</div>
+      <div class="controls-group">
+        <button id="replayBtn">Main Lagi</button>
+        <button id="quitBtn" class="muted-btn">Quit</button>
+      </div>
+    </div>
+
+    <audio
+      id="moveSound"
+      src="https://actions.google.com/sounds/v1/ui/button_hover.ogg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="rotateSound"
+      src="https://actions.google.com/sounds/v1/ui/button_click.ogg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="dropSound"
+      src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="gameOverSound"
+      src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"
+      preload="auto"
+    ></audio>
+    <audio
+      id="bgm"
+      src="https://archive.org/download/TetrisThemeMusic/Tetris.mp3"
+      loop
+    ></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

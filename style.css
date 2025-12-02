@@ -1,0 +1,157 @@
+/* General Styling */
+body {
+  background: #0f172a; /* Darker blue background */
+  color: #e2e8f0; /* Light gray text */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+.wrapper {
+  display: flex;
+  gap: 30px; /* Increased gap */
+  align-items: flex-start;
+  padding: 20px;
+  background: #1e293b; /* Slightly lighter background for the wrapper */
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  margin-top: -60px;
+}
+
+/* Canvas Styling */
+canvas {
+  image-rendering: pixelated;
+}
+canvas#board {
+  background: #020617; /* Very dark canvas background */
+  border: 5px solid #334155; /* Thicker, defined border */
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+canvas#nextCanvas {
+  background: #020617 !important;
+  border: 3px solid #334155 !important;
+  border-radius: 4px;
+  margin-bottom: 15px !important;
+}
+
+/* Side Panel and Info */
+.side {
+  width: 220px; /* Wider side panel */
+}
+.header-blue {
+  color: #60a5fa; /* Blue headers */
+}
+h2,
+h3 {
+  margin: 10px 0 5px 0;
+}
+
+/* Difficulty Select */
+#difficulty {
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  width: 100%; /* Membuat dropdown memenuhi lebar */
+  box-sizing: border-box; /* Memastikan padding tidak menambah lebar */
+}
+
+/* Buttons */
+button,
+select {
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+#startBtn,
+#replayBtn {
+  background: #10b981; /* Green for Start/Replay */
+  color: #064e3b;
+}
+button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+.muted-btn {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+}
+.muted-btn:hover {
+  background: #475569;
+}
+.controls-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* Leaderboard Styling */
+#leaderboard {
+  margin-top: 8px;
+  font-size: 16px;
+  padding-left: 20px;
+  list-style-type: none;
+}
+#leaderboard li {
+  margin: 4px 0;
+  margin-right: 70px;
+  padding: 2px 0;
+  border-bottom: 1px dashed #334155;
+}
+
+/* Game Over Screen */
+.game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  gap: 20px;
+  visibility: hidden;
+  z-index: 9999;
+  color: #f8fafc;
+}
+
+/* Mobile Controls */
+#mobileControls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+  z-index: 9999;
+}
+#mobileControls button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background: #334155;
+  color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  .side {
+    width: 180px;
+  }
+}
