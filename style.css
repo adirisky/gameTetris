@@ -12,13 +12,12 @@ body {
 }
 .wrapper {
   display: flex;
-  gap: 30px; /* Increased gap */
+  gap: 3px; /* Increased gap */
   align-items: flex-start;
   padding: 20px;
   background: #1e293b; /* Slightly lighter background for the wrapper */
   border-radius: 12px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  margin-top: -60px;
 }
 
 /* Canvas Styling */
@@ -152,6 +151,22 @@ button:hover {
 
 @media (max-width: 480px) {
   .side {
-    width: 180px;
+    width: 100px;
   }
+  #leaderboard {
+    font-size: 10px;
+  }
+  #leaderboard li {
+    margin-left: -10px;
+    margin-right: 0px;
+  }
+  /* .controls-group{
+    position: fixed;
+    bottom: px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 14px;
+    z-index: 9999;
+  } */
 }
